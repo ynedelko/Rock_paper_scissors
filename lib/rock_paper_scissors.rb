@@ -19,6 +19,14 @@ class String
       elsif challenger == "paper"
         nil
       end
+    elsif self == "scissors"
+        if challenger == "rock"
+          false
+        elsif challenger == "paper"
+          true
+        elsif challenger == "scissors"
+          nil
+        end
     end
   end
 end
