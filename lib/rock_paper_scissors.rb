@@ -1,41 +1,19 @@
 class String
-  #def beats?(challenger)
   define_method(:beats?) do |challenger|
-    #unrecognized = "I have no idea what you're doing, try again!"
     downcase!
     challenger.downcase!
-    if self == "rock"
-      if challenger == "scissors"
+    winning = {"rock"=>"scissors", "paper"=>"rock", "scissors"=>"paper"}
+
+    if winning.has_key?(self) && winning.has_value?(challenger)
+      if winning.fetch(self) == challenger
         true
-      elsif challenger == "paper"
+      elsif winning.fetch(self) != challenger && self != challenger
         false
-      elsif challenger == "rock"
-        nil
       else
-        "unrecognized"
-      end
-    elsif self == "paper"
-      if challenger == "scissors"
-        false
-      elsif challenger == "rock"
-        true
-      elsif challenger == "paper"
-        nil
-      else
-        "unrecognized"
-      end
-    elsif self == "scissors"
-      if challenger == "rock"
-        false
-      elsif challenger == "paper"
-        true
-      elsif challenger == "scissors"
-        nil
-      else
-        "unrecognized"
+        "It's a tie!"
       end
     else
-      "unrecognized"
+      "You can't play that! Try again!"
     end
   end
 end
