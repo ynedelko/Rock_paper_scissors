@@ -8,6 +8,8 @@ class String
         true
       elsif challenger == "paper"
         false
+      elsif challenger == "rock"
+        nil
       end
     end
   end
