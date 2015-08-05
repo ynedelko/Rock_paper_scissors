@@ -6,6 +6,8 @@ class String
     if self == "rock"
       if challenger == "scissors"
         true
+      elsif challenger == "paper"
+        false
       end
     end
   end
