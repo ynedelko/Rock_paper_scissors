@@ -1,13 +1,13 @@
 require('sinatra')
 require('sinatra/reloader')
-require('./lib/scrabble')
+require('./lib/rock_paper_scissors')
 also_reload('lib/**/*.rb')
 
 get('/') do
   erb(:index)
 end
 
-get('/result') do
-  @result = params.fetch('Player1').beats?('Player2')
-  erb(:result)
+get('/results') do
+  @result = params.fetch('Player1').beats?(params.fetch('Player2'))
+  erb(:results)
 end

@@ -6,9 +6,9 @@ class String
 
     if winning.has_key?(self) && winning.has_value?(challenger)
       if winning.fetch(self) == challenger
-        true
+        "Player 1 wins!"
       elsif winning.fetch(self) != challenger && self != challenger
-        false
+        "Player 2 wins!"
       else
         "It's a tie!"
       end
