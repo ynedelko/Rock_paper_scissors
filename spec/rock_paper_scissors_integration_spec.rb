@@ -6,8 +6,8 @@ set(:show_exceptions, false)
 describe("the result path", {:type => :feature}) do
   it("shows which player won") do
     visit('/')
-    fill_in('Player 1', :with => 'rock')
-    fill_in('Player 2', :with => 'paper')
+    fill_in('Player1', :with => 'rock')
+    fill_in('Player2', :with => 'paper')
     click_button('Go!')
     expect(page).to have_content(false)
   end
